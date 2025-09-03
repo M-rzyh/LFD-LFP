@@ -60,6 +60,12 @@
       <div class="col-md-8 d-flex justify-content-center">
         <div class="game-container" style="width: 78%;">
           <img id="image" style="visibility: hidden;" class="img-fluid rounded img-thumbnail w-100" src="{% static request.path %}/{{ room_name }}/step.jpg">
+
+          <div id="preference-buttons" style="margin-top: 20px; display: none; text-align: center;">
+            <button id="btn-good" class="btn btn-success">Good (1)</button>
+            <button id="btn-bad" class="btn btn-danger">Bad (0)</button>
+          </div>
+          
           {% include "mountain/components/key_press_display.html" %}
         </div>
       </div>

@@ -68,6 +68,7 @@ class ConsumerTemplate(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         # Decode what has been sent by the user
         await self.process_inputs(text_data)
+        print("process_inputs:", self.process_inputs(text_data))#temp
 
         # Don't do anything if a step is already in process
         if(self.is_in_use[self.room_group_name]):
@@ -86,7 +87,8 @@ class ConsumerTemplate(AsyncWebsocketConsumer):
         # Raise a flag that the room is not in use
         self.is_in_use[self.room_group_name] = False
         # If the game is over, we delete the room to allow to reset it
-        if self.terminated[self.room_name]:
+        if self.terminated[self.room_name] and self.preference_received.get(self.room_name, True):
+            print("this is happening here")
             del self.is_in_use[self.room_group_name]
 
     # Receive message from room group

@@ -13,7 +13,7 @@ def config_(request):
     # If this is a POST request we need to process the form data
     if request.method == "POST":
         # Create a form instance and populate it with data from the request:
-        form = ConfigForm(request.POST)
+        form = ConfigForm(request.POST)#uncommnet this
         # Check whether it's valid
         if form.is_valid():
             # Process the data in form.cleaned_data if the field has been filled

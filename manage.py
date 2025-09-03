@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# ids the framework manager, it allows you to easily launch your website and refreshes automatically to perform live testing.
+
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
